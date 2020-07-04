@@ -153,7 +153,7 @@ jobs:
           path: /tmp/.buildx-cache/linux/amd64
           key: ${{ runner.os }}-buildx-${{ github.sha }}-linux/amd64
       - name: DockerHub login
-        run: echo "${{ secrets.DOCKERHUB_ACCESS_TOKEN }}" | docker login --username "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
+        run: echo '${{ secrets.DOCKERHUB_ACCESS_TOKEN }}' | docker login --username "${{ secrets.DOCKERHUB_USERNAME }}" --password-stdin
       - name: Configure Docker build
         run: .github/bin/get-buildx-args publish
       - name: Publish the Docker images
